@@ -1,0 +1,13 @@
+
+import random
+a=random.randint(0, 100)
+b=random.randint(0,10)
+c = a+b
+print(a,"+",b, "= ")
+d = int(input())
+
+if c ==d :
+    i=1
+    print("correct")
+else:
+    print("wrong")    
