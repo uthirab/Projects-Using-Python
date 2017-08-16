@@ -1,0 +1,14 @@
+# Python
+https://github.com/uthirab/Python.git
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+import urllib
+link = 'http://www.moneycontrol.com/stocks/company_info/print_main.php'
+f = urllib.urlopen(link)           
+myfile = f.readline()  
+print(myfile)
+
