@@ -1,0 +1,7 @@
+import math
+print("Calculates the GCD of two numbers\n")
+a=int(input("Enter the first number: \n"))
+b=int(input("enter the second number: \n"))
+gcd= str(math.gcd(a,b))
+print("GCD is " +gcd)
+      
