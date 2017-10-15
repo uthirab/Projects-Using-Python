@@ -1,0 +1,23 @@
+alpha=list("abcdefghijklmopqrstuvwxyz")
+newalpha=list()
+a=1
+r=0
+for i in alpha:
+    if a<22:
+        t=a+3
+        newalpha.append(alpha[t])
+        a=a+1
+    else:
+        newalpha.append(alpha[r])
+        r=r+1
+
+str1=str(input("\nEnter the string to be encryted: "))
+com1 = list(str1)
+com2 = list()
+for b in com1:
+    if b in alpha:
+        r=alpha.index(b)
+        com2.append(newalpha[r])
+s="";    
+print (s.join(com2))
+    
