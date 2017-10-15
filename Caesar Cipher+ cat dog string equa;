@@ -25,6 +25,4 @@ print (s.join(com2))
 
 print("To check if the string cat and dog appear equal number of times in te given string")
 srt=input("\nenter the string:")
-r=srt.count('dog')
-s=srt.count('cat')
-print(r==s)
+print(srt.count('dog')==srt.count('cat'))
