@@ -1,0 +1,9 @@
+print("Finding the letters")
+s = str(input("\nEnter the string: "))
+f = str(input("\nenter the letter to be found : "))
+print(f in s)
+      
+print("\nString Reverse")
+r=str(input("\nEnter the string to be reversed : "))
+k=r[::-1]
+print(k)
