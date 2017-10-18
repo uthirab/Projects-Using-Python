@@ -1,6 +1,10 @@
 # Scatter plot
 plt.scatter(gdp_cap, life_exp)
 
+# Scatter plot , s-> changes the bubble size with the data, c-> colors and col is the column of colors corresponding to countries,
+#alpha varies from 0 to 1adn 0 make the colors blend to ont another and 1 makes the color distinct
+plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, c = col, alpha = 0.8)
+
 # Previous customizations
 plt.xscale('log') 
 plt.xlabel('GDP per Capita [in USD]')
@@ -13,5 +17,13 @@ tick_lab = ['1k','10k','100k']
 
 # Adapt the ticks on the x-axis
 plt.xticks(tick_val,tick_lab)
+
+# Additional customizations
+plt.text(1550, 71, 'India') # plt.text(x,y,s) ->add string s to the axis x,y 
+plt.text(5700, 80, 'China')
+
+# Add grid() call to display the gridlines
+plt.grid(True)
+
 # After customizing, display the plot
 plt.show()
