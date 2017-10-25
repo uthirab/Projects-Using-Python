@@ -1,0 +1,25 @@
+#linking two functions
+# to print the average and remove first and last mark from grades to calculate the average and print it
+def avg(x):
+    y=sum(x)/len(x)
+    return y
+def drop(grades):
+    first, *middle, last =grades
+    return avg(middle)
+grades = [89,67,85,85,45,90,75,47,96,8,9]
+r=drop(grades)
+print(r)
+
+# to create a rombus with '*'
+r= '*'
+for i in range(0,6):
+    e=r*i
+    print(e)
+i=5
+for j in range(5):
+    q=' '
+    w=j*q
+    t=r*i
+    print(w,t)
+    i=i-1
+
