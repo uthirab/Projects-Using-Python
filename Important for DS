@@ -1,0 +1,18 @@
+# it prints the largest and the smallest of N items
+import heapq as h
+nums=[1,3,4,5,3,64,85,2,-34,74,73,5,6]
+print(h.nlargest(3,nums))
+print(h.nsmallest(3,nums))
+portfolio=[{'name':'IBM','shares':100,'price':91.1},
+           {'name':'aapl','shares':50,'price':543.25},
+           {'name':'Fb','shares':200,'price':31.75},
+           {'name':'hp','shares':45,'price':16.35},
+           {'name':'trk','shares':75,'price':115.65}]
+cheap=h.nsmallest(3,portfolio, key=lambda s:s['price'])
+expensive=h.nlargest(3,portfolio, key=lambda s:s['price'])
+
+
+
+
+
+
