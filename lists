@@ -1,0 +1,21 @@
+if __name__ == '__main__':
+    arg1 = input()
+    l = []
+    for _ in range(int(arg1)):
+        s = input().split()
+        if (s[0] != 'print'):
+            eval("l.{}(".format(s[0])+','.join(s[1:])+")")
+        else:
+            print(l)
+         
+            
+  '''str.split() will take the string, str and use white space as a delimiter to turn the contents of str into a list of strings.
+example: "so this becomes".split() = ['so','this','becomes']
+The first value in each of the lists created within the for loop is a string that matches the method we wish to use. eval takes strings as input, and runs them as Python code.
+example: eval("print("same")") == print("same")
+The format code is taking the first element of the list, s[0], and substituting it for the "{}" contained in my eval string.
+example: "{}{}{}".format("Hello"," ","World") becomes "Hello World"
+','.join(list) takes each element of a list, and appends them into a string using ',' as the delimiter. the + operator here is just appending the front half of my eval statement to the back half of my eval statement.
+example: ','.join(['this',' ','is',' ','nice']) becomes 'this, ,is, ,nice'
+example: "l.insert(" + "1,2)" = "l.insert(1,2)"
+All of these steps take advantage of methods that are built into Python's list data type. That's why we can do list.METHOD(argument'''
