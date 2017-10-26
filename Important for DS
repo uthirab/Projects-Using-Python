@@ -10,6 +10,7 @@ portfolio=[{'name':'IBM','shares':100,'price':91.1},
            {'name':'trk','shares':75,'price':115.65}]
 cheap=h.nsmallest(3,portfolio, key=lambda s:s['price'])
 expensive=h.nlargest(3,portfolio, key=lambda s:s['price'])
+h.heapify(heap) # smallest number is the first
 
 
 
