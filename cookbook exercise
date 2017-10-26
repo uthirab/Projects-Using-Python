@@ -1,3 +1,6 @@
+''' heapq- largest and smallest of N items'''
+
+
 # * functions
 records=[('foo', 4, 6), ('bar', 4),('foo', 4, 3)]
 def do_foo(x, y):
@@ -12,3 +15,16 @@ for tag, *args in records:
     elif tag == 'bar':
         do_bar(*args)
         
+#history of limited N 
+from collections import deque
+q=deque(maxlen=3)
+q.append(1)
+q.append(2)
+q.append(3)
+q.appendleft(4)
+q.pop() #pops last element
+q.popleft() # pops first element
+
+# largest and the smallest of N elements
+
+
