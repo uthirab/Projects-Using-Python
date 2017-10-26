@@ -1,6 +1,3 @@
-''' heapq- largest and smallest of N items'''
-
-
 # * functions
 records=[('foo', 4, 6), ('bar', 4),('foo', 4, 3)]
 def do_foo(x, y):
@@ -25,6 +22,34 @@ q.appendleft(4)
 q.pop() #pops last element
 q.popleft() # pops first element
 
-# largest and the smallest of N elements
+import heapq
+
+class priorityqueue:
+    def __init__(self):
+        self._queue=[]
+        self._index=0
+
+    def push(self,item, priority):
+        heapq.heappush(self._queue, (-priority, self._index,item))
+        self._index +=1
+
+    def pop(self):
+        return heapq.heappop(self._queue)[-1]
+
+class item:
+    def __init__(self, name):
+        self.name= name
+    def __repr__(self):
+        return 'item({!r})'.format(self.name)
+
+q = priorityqueue()
+q.push(item('foo'),1)
+q.push(item('bar'),5)
+q.push(item('spam'),4)
+q.push(item('grok'),1)
+print(q.pop())
+print(q.pop())
+print(q.pop())
+print(q.pop())
 
 
