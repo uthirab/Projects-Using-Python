@@ -19,3 +19,14 @@ example: "{}{}{}".format("Hello"," ","World") becomes "Hello World"
 example: ','.join(['this',' ','is',' ','nice']) becomes 'this, ,is, ,nice'
 example: "l.insert(" + "1,2)" = "l.insert(1,2)"
 All of these steps take advantage of methods that are built into Python's list data type. That's why we can do list.METHOD(argument'''
+
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    t= max(arr)
+    ''' for i in range (0,n): 
+        if t in arr:
+            arr.remove(t)
+    print(max(arr))'''
+    print(max([x for x in arr if x!=max(arr)]))
