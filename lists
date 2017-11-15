@@ -30,3 +30,13 @@ if __name__ == '__main__':
             arr.remove(t)
     print(max(arr))'''
     print(max([x for x in arr if x!=max(arr)]))
+
+
+if __name__ == '__main__':
+    n= int(input())
+    marksheet=[]
+    marksheet=[[input(), float(input())] for i in range (n)]
+    c=sorted(set(b for a,b in marksheet))
+    print('\n'.join(sorted([a for a,b in marksheet if b == c[1]])))
+    
+   
