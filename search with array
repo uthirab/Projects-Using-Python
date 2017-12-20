@@ -1,0 +1,9 @@
+n=int(input())
+room=input()
+room_no=list(map(int,room.split( )))
+#r=[x for x in room_no if room_no.count(x)==1]
+#print(r[0])
+for i in room_no:
+    if room_no.count(i)==1:
+        print(i)
+print(int(((sum(t)*n)-(sum(room_no)))/(n-1))) 
