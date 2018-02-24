@@ -1,0 +1,29 @@
+from tkinter import *
+
+dp = Tk()
+
+def printtext():
+    global entry_box, text_box, string
+    string = entry_box.get()
+
+    entry_box.delete(0, END)
+    text_box.insert(END, string + '\n')
+    text_box.see(END)
+  
+scroll_bar = Scrollbar(dp)
+text_box = Text(dp, height=10, width=50)
+dp.title('Client Server')
+entry_box = Entry(dp, width=75)
+entry_box.grid(row=1, column=0)
+entry_box.pack(side=LEFT)
+entry_box.focus_set()
+
+scroll_bar.pack(side=RIGHT, fill=Y)
+text_box.pack(side=LEFT,fill=Y)
+scroll_bar.config(command=text_box.yview)
+text_box.config(yscrollcommand=scroll_bar.set)
+
+but_ton = Button(dp,text='okay',command=printtext)
+but_ton.pack(side=LEFT)
+mainloop()
+
