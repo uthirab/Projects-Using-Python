@@ -27,3 +27,28 @@ but_ton = Button(dp,text='okay',command=printtext)
 but_ton.pack(side=LEFT)
 mainloop()
 
+
+
+
+
+def connectserver1():
+    try:
+        text_box.insert(END, '\n' + 'try' + '\n')
+        if CLIENT_SOCKET:
+            DATA = CLIENT_SOCKET.recv(4096)
+            if DATA:
+                text_box.insert(END, '\n' + DATA.decode() + '\n')
+            # text_box.delete(1.0, END)
+            else:
+                e = 'else'
+                text_box.insert(END, '\n' + e + '\n')
+
+            # except Exception as msg:
+            #   text_box.insert(END, '\n' + str(msg) + '\n')
+        else:
+            e = 'no client'
+            text_box.insert(END, '\n' + e + '\n')
+    finally:
+        e = 'finaaly executing'
+        text_box.insert(END, '\n' + e + '\n')
+        return
