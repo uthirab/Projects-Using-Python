@@ -23,3 +23,9 @@ for j in range(5):
     print(w,t)
     i=i-1
 
+import csv
+ 
+with open('example.csv', newline='') as File:  
+    reader = csv.reader(File)
+    for row in reader:
+        print(row)
