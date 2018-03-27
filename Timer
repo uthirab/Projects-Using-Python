@@ -1,3 +1,15 @@
+#thread timer(works perfectly)
+
+from threading import Timer
+
+def x():
+    print("Hello")
+
+Timer(10, x, ()).start()
+print("World!")
+
+
+------------------------------------------------
 #prints seconds
 
 import time
