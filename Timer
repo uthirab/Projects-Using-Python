@@ -1,0 +1,68 @@
+#prints seconds
+
+import time
+from math import ceil
+
+std=time.time()
+i=0
+while i<3:
+    nowtime=time.time()
+    r=ceil(nowtime-std)
+    if r == i:
+        pass
+    else:
+        print(i)
+        i=r
+
+
+---------------------------------------------------
+class Timer:
+    def __init__(self):
+        self.accumulated_time = 0
+        self.start_time = pygame.time.get_ticks()
+        self.running = True
+
+    def pause(self):
+        if not self.running:
+            raise Exception('Timer is already paused')
+        self.running = False
+        self.accumulated_time += pygame.time.get_ticks() - self.start_time
+
+    def resume(self):
+        if self.running:
+            raise Exception('Timer is already running')
+        self.running = True
+        self.start_time = pygame.time.get_ticks()
+
+    def get(self):
+        if self.running:
+            return (self.accumulated_time +
+                    (pygame.time.get_ticks() - self.start_time))
+        else:
+            return self.accumulated_time
+            
+            
+ ---------------------------------------------------------------------------------------
+ 
+ from threading import Thread, Event
+import time
+stop_it = Event()
+def do_stuff():
+    i = 0
+    while True:
+        i += 1
+        print(i)
+        time.sleep(10)
+
+        if stop_it.is_set():
+            if r==5:
+                print("yup")
+            else:
+                print("nope")
+if __name__ == '__main__':
+    # Create a thread that needs to run for 5 seconds
+    stuff_doing_thread = Thread(target=do_stuff)
+    r=5
+    stuff_doing_thread.start()
+    stop_it.set()
+
