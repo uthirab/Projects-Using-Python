@@ -1,0 +1,16 @@
+g=['a','b','c']
+r=['1','2','3']
+dict_my = {}
+for i in range(len(g)):
+    dict_my[g[i]] = r[i]
+print(dict_my)
+print(dict_my['c'])
+print(len(dict_my))
+if 'a' in dict_my:
+    print("yes")
+else:
+    print("no")
+q="commit"
+c="globalcommit"
+if ":commit" in c:
+    print("oh ")
