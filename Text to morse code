@@ -1,0 +1,16 @@
+morse=[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+alpha='abcdefghijklmnopqrstuvwxyz'
+alphabet=sorted(set(alpha))
+dict1={}
+r,c=[],[]
+for i in range(len(alphabet)):
+    dict1[alphabet[i]] = morse[i]
+word=["gin", "zen", "gig", "msg"]
+for i in range(len(word)):
+    setword=list(word[i])
+    for x in setword:
+       r.append(dict1[x])
+    c.append(''.join(r))
+    r=[]
+w=set(c)
+print(len(w))
