@@ -1,0 +1,42 @@
+import numpy as np
+x=[2,7,54,75,34,86,34,2,67,75]
+print(np.mean(x))
+print(np.std(x))
+43.6
+30.67637527479412
+
+normalize=list()
+def normalization(data):
+    mini=min(data)
+    maxa=max(data)
+    
+    for i in data:
+        tmp=(i-mini)/(maxa-mini)
+        normalize.append(tmp)
+    print(normalize)
+    print(np.mean(normalize))
+normalization(x)
+#[0.0, 0.05952380952380952, 0.6190476190476191, 0.8690476190476191, 0.38095238095238093, 1.0, 0.38095238095238093, 0.0, 0.7738095238095238, 0.8690476190476191]
+#0.49523809523809526
+
+from scipy import stats
+z=stats.zscore(x)
+print(z)
+print(np.mean(z))
+print(np.std(z))
+#[-1.35609242 -1.19310054  0.33902311  1.02358899 -0.3129444   1.38217112
+ -0.3129444  -1.35609242  0.76280199  1.02358899]
+#-2.2204460492503132e-17
+#1.0
+
+m=np.mean(x)
+t=np.std(x)
+r=list()
+for i in x:
+    r.append((i-m)/t)
+print(r)
+print(np.mean(r))
+print(np.std(r))
+#[-1.3560924205468794, -1.1931005430773027, 0.3390231051367198, 1.0235889905089426, -0.31294440474158763, 1.3821711209420118, -0.31294440474158763, -1.3560924205468794, 0.7628019865576197, 1.0235889905089426]
+-2.2204460492503132e-17
+#1.0
